@@ -11,13 +11,26 @@
 <body>
 
     <div id="container"></div>
-
+      <!-- each component should return one single parent component-->
     <script type="text/babel">
+        var Greeting = React.createClass({
+            render: function(){
+                return (
+                <div>
+                    <h3>Welcome to React!</h3>
+                    <p>This is a training example about react for beginners.</p>
+                    </div>
+                );
+            }
+        });
+        ReactDOM.render(<Greeting />,document.getElementById('container'));
+   
+    </script>
+ <!--
         ReactDOM.render(
             <h2>Welcome to React!</h2>,
             document.getElementById('container')
         );
-    </script>
-
+    -->
 </body>
 </html>
