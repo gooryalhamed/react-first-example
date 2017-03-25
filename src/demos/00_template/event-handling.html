@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Event Handling</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/main.css">
+	<script src="../../js/react.min.js"></script>
+	<script src="../../js/react-dom.min.js"></script>
+	<script src="../../js/browser.min.js"></script>
+</head>
+<body>
+	<div id="container"></div>
+	<script type="text/babel">
+		var Comment = React.createClass({
+			edit: function(){alert('edit comment')},
+			remove: function(){alert('remove comment')},
+			render: function(){
+				return(<div className="container">
+						<div class="row">
+								<div className="text">{this.props.children}</div>
+								<button onClick={this.edit} className="btn btn-edit">Edit</button>
+							<button onClick={this.remove} className="btn btn-del">Remove</button>
+						</div>
+						</div>);
+			}
+		})
+ReactDOM.render(
+	<Comment>Hey you did it!</Comment>
+	,document.getElementById('container'));
+</script>
+</body>
+</html>
